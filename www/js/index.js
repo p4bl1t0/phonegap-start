@@ -39,11 +39,11 @@ var app = {
             id:             "69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb",
             latitude:       -32.9267366,
             longitude:      -60.6609286,
-            radius:         100,
+            radius:         20,
             transitionType: TransitionType.BOTH,
             notification: {
                 id:             1,
-                title:          "Test test",
+                title:          "Test test santander",
                 text:           "Test.",
                 openAppOnClick: true
             }
