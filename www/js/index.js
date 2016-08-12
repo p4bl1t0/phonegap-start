@@ -34,6 +34,24 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        
+        window.geofence.addOrUpdate({
+            id:             "69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb",
+            latitude:       -32.9267827,
+            longitude:      -60.6619223,
+            radius:         3000,
+            transitionType: TransitionType.ENTER,
+            notification: {
+                id:             1,
+                title:          "Welcome in Gliwice",
+                text:           "You just arrived to Gliwice city center.",
+                openAppOnClick: true
+            }
+        }).then(function () {
+            alert('Geofence successfully added');
+        }, function (reason) {
+            alert('Adding geofence failed', reason);
+        })
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
