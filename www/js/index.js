@@ -40,7 +40,7 @@ var app = {
             latitude:       -32.9267827,
             longitude:      -60.6619223,
             radius:         3000,
-            transitionType: TransitionType.ENTER,
+            transitionType: TransitionType.BOTH,
             notification: {
                 id:             1,
                 title:          "Welcome in Gliwice",
