@@ -43,12 +43,84 @@ var app = {
             transitionType: TransitionType.BOTH,
             notification: {
                 id:             1,
-                title:          "Test test santander",
+                title:          "Test test santander limited in time",
                 text:           "Test.",
-                openAppOnClick: true
+                openAppOnClick: true,
+                scheduleData: [
+                    {
+                        "on": {
+                            "hour": "0",
+                            "minute": "0"
+                        },
+                        "off": {
+                            "hour": "14",
+                            "minute": "30"
+                        }
+                    },
+                    {
+                        "on": {
+                            "hour": "0",
+                            "minute": "0"
+                        },
+                        "off": {
+                            "hour": "14",
+                            "minute": "30"
+                        }
+                    },
+                    {
+                        "on": {
+                            "hour": "0",
+                            "minute": "0"
+                        },
+                        "off": {
+                            "hour": "14",
+                            "minute": "30"
+                        }
+                    },
+                    {
+                        "on": {
+                            "hour": "0",
+                            "minute": "0"
+                        },
+                        "off": {
+                            "hour": "14",
+                            "minute": "30"
+                        }
+                    },
+                    {
+                        "on": {
+                            "hour": "0",
+                            "minute": "0"
+                        },
+                        "off": {
+                            "hour": "14",
+                            "minute": "30"
+                        }
+                    },
+                    {
+                        "on": {
+                            "hour": "0",
+                            "minute": "0"
+                        },
+                        "off": {
+                            "hour": "14",
+                            "minute": "30"
+                        }
+                    },
+                    {
+                        "on": {
+                            "hour": "0",
+                            "minute": "0"
+                        },
+                        "off": {
+                            "hour": "14",
+                            "minute": "30"
+                        }
+                    }
+                ]
             }
         }).then(function () {
-            alert('Geofence successfully added in Santader rio');
+            alert('Geofence successfully added in Santader rio with time limitation');
         }, function (reason) {
             alert('Adding geofence failed', reason);
         })
