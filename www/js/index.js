@@ -37,18 +37,18 @@ var app = {
         
         window.geofence.addOrUpdate({
             id:             "69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb",
-            latitude:       -32.9267827,
-            longitude:      -60.6619223,
-            radius:         3000,
+            latitude:       -32.9267366,
+            longitude:      -60.6609286,
+            radius:         100,
             transitionType: TransitionType.BOTH,
             notification: {
                 id:             1,
-                title:          "Welcome in Gliwice",
-                text:           "You just arrived to Gliwice city center.",
+                title:          "Test test",
+                text:           "Test.",
                 openAppOnClick: true
             }
         }).then(function () {
-            alert('Geofence successfully added');
+            alert('Geofence successfully added in Santader rio');
         }, function (reason) {
             alert('Adding geofence failed', reason);
         })
