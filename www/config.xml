@@ -70,7 +70,7 @@
     <!--
         <plugin name="com.phonegap.plugins.barcodescanner" />
     -->
-    <plugin spec="https://github.com/cowbell/cordova-plugin-geofence.git" source="git" />
+    <plugin spec="https://github.com/p4bl1t0/cordova-plugin-geofence.git" source="git" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
