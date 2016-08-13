@@ -80,8 +80,10 @@ var app = {
             desiredAccuracy: 10,
             stationaryRadius: 10,
             distanceFilter: 10,
-            interval: 5000,
-            url: "http://shetaxi.com.ar/test.php"
+            url: "http://shetaxi.com.ar/test.php",
+            locationProvider: backgroundGeolocation.provider.ANDROID_ACTIVITY_PROVIDER,
+            interval: 1000
+
         });
     
         // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
