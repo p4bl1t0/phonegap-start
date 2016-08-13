@@ -81,7 +81,6 @@ var app = {
             stationaryRadius: 10,
             distanceFilter: 10,
             url: "http://shetaxi.com.ar/test.php",
-            locationProvider: backgroundGeolocation.provider.ANDROID_ACTIVITY_PROVIDER,
             interval: 1000
 
         });
