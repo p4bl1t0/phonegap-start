@@ -77,11 +77,12 @@ var app = {
     
         // BackgroundGeolocation is highly configurable. See platform specific configuration options
         backgroundGeolocation.configure(callbackFn, failureFn, {
-            desiredAccuracy: 10,
+            desiredAccuracy: 5,
             stationaryRadius: 10,
             distanceFilter: 10,
             url: "http://shetaxi.com.ar/test.php",
-            interval: 1000
+            interval: 1000,
+            stopOnStillActivity: true
 
         });
     
