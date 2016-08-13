@@ -45,94 +45,60 @@ var app = {
                 id:             1,
                 title:          "Test test santander limited in time",
                 text:           "Test.",
-                openAppOnClick: true,
-                scheduleData: [
-                    {
-                        "on": {
-                            "hour": "0",
-                            "minute": "0"
-                        },
-                        "off": {
-                            "hour": "14",
-                            "minute": "30"
-                        }
-                    },
-                    {
-                        "on": {
-                            "hour": "0",
-                            "minute": "0"
-                        },
-                        "off": {
-                            "hour": "14",
-                            "minute": "30"
-                        }
-                    },
-                    {
-                        "on": {
-                            "hour": "0",
-                            "minute": "0"
-                        },
-                        "off": {
-                            "hour": "14",
-                            "minute": "30"
-                        }
-                    },
-                    {
-                        "on": {
-                            "hour": "0",
-                            "minute": "0"
-                        },
-                        "off": {
-                            "hour": "14",
-                            "minute": "30"
-                        }
-                    },
-                    {
-                        "on": {
-                            "hour": "0",
-                            "minute": "0"
-                        },
-                        "off": {
-                            "hour": "14",
-                            "minute": "30"
-                        }
-                    },
-                    {
-                        "on": {
-                            "hour": "0",
-                            "minute": "0"
-                        },
-                        "off": {
-                            "hour": "14",
-                            "minute": "30"
-                        }
-                    },
-                    {
-                        "on": {
-                            "hour": "0",
-                            "minute": "0"
-                        },
-                        "off": {
-                            "hour": "14",
-                            "minute": "30"
-                        }
-                    }
-                ]
+                openAppOnClick: true
             }
         }).then(function () {
-            alert('Geofence successfully added in Santader rio with time limitation');
+            console.log('Geofence successfully added in Santader rio with time limitation');
         }, function (reason) {
-            alert('Adding geofence failed', reason);
-        })
+            console.log('Adding geofence failed', reason);
+        });
+        
+        
+        /**
+        * This callback will be executed every time a geolocation is recorded in the background.
+        */
+        var callbackFn = function(location) {
+            console.log('[js] BackgroundGeolocation callback:  ' + location.latitude + ',' + location.longitude);
+    
+            // Do your HTTP request here to POST location to your server.
+            // jQuery.post(url, JSON.stringify(location));
+    
+            /*
+            IMPORTANT:  You must execute the finish method here to inform the native plugin that you're finished,
+            and the background-task may be completed.  You must do this regardless if your HTTP request is successful or not.
+            IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.
+            */
+            backgroundGeolocation.finish();
+        };
+    
+        var failureFn = function(error) {
+            console.log('BackgroundGeolocation error');
+        };
+    
+        // BackgroundGeolocation is highly configurable. See platform specific configuration options
+        backgroundGeolocation.configure(callbackFn, failureFn, {
+            desiredAccuracy: 10,
+            stationaryRadius: 20,
+            distanceFilter: 30,
+            interval: 15000,
+            url: "http://shetaxi.com.ar/test.php"
+        });
+    
+        // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
+        backgroundGeolocation.start();
+        alert("background geo on");
+        
+        // If you wish to turn OFF background-tracking, call the #stop method.
+        // backgroundGeolocation.stop();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
+        /*var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        receivedElement.setAttribute('style', 'display:block;');*/
 
         console.log('Received Event: ' + id);
     }
