@@ -51,13 +51,21 @@
             center: {lat: -34.397, lng: 150.644},
             zoom: 6
           });
-          var infoWindow = new google.maps.Marker({map: map});
+          var marker = new google.maps.Marker({map: map});
+          var pos = {
+			lat: -32.926748,
+			lng: -60.660921
+		  };
+
+		  marker.setPosition(pos);
+          marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png')
         
           // Try HTML5 geolocation.
           if (navigator.geolocation) {
           
         	setInterval(function () {
         		navigator.geolocation.getCurrentPosition(function(position) {
+    		      var infoWindow = new google.maps.Marker({map: map});
         		  var pos = {
         			lat: position.coords.latitude,
         			lng: position.coords.longitude
