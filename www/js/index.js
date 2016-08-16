@@ -37,18 +37,18 @@ var app = {
         
         window.geofence.addOrUpdate({
             id:             "69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb",
-            latitude:       -32.9267366,
-            longitude:      -60.6609286,
+            latitude:       -32.926748,
+            longitude:      -60.660921,
             radius:         20,
             transitionType: TransitionType.BOTH,
             notification: {
                 id:             1,
-                title:          "Test test santander limited in time",
+                title:          "Test test geofencing basic",
                 text:           "Test.",
                 openAppOnClick: true
             }
         }).then(function () {
-            console.log('Geofence successfully added in Santader rio with time limitation');
+            alert('Geofence successfully added');
         }, function (reason) {
             console.log('Adding geofence failed', reason);
         });
@@ -88,7 +88,7 @@ var app = {
     
         // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
         backgroundGeolocation.start();
-        alert("background geo on");
+        console.log("background geo on");
         
         // If you wish to turn OFF background-tracking, call the #stop method.
         // backgroundGeolocation.stop();
