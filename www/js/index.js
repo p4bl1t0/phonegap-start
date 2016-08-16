@@ -34,23 +34,28 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        window.geofence.initialize();
-        window.geofence.addOrUpdate({
-            id:             "69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb",
-            latitude:       -32.926748,
-            longitude:      -60.660921,
-            radius:         20,
-            transitionType: TransitionType.BOTH,
-            notification: {
-                id:             1,
-                title:          "Test test geofencing basic",
-                text:           "Test.",
-                openAppOnClick: true
-            }
-        }).then(function () {
-            alert('Geofence successfully added');
+        window.geofence.initialize().then(function () {
+            alert('Geofence successfully init');
+            window.geofence.addOrUpdate({
+                id:             "69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb",
+                latitude:       -32.926748,
+                longitude:      -60.660921,
+                radius:         80000,
+                transitionType: TransitionType.BOTH,
+                notification: {
+                    id:             1,
+                    title:          "Test test geofencing basic",
+                    text:           "Test.",
+                    openAppOnClick: true
+                }
+            }).then(function () {
+                alert('Geofence successfully added');
+            }, function (reason) {
+                console.log('Adding geofence failed', reason);
+            });
+        
         }, function (reason) {
-            console.log('Adding geofence failed', reason);
+            console.log('Initialize geofence failed', reason);
         });
         
         
