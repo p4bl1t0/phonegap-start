@@ -40,7 +40,7 @@ var app = {
                 id:             "69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb",
                 latitude:       -32.926748,
                 longitude:      -60.660921,
-                radius:         80000,
+                radius:         30,
                 transitionType: TransitionType.BOTH,
                 notification: {
                     id:             1,
