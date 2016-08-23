@@ -36,67 +36,34 @@ var app = {
         app.receivedEvent('deviceready');
         window.geofence.initialize().then(function () {
             alert('Geofence successfully init');
-            window.geofence.addOrUpdate({
-                id:             "69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb",
-                latitude:       -32.926748,
-                longitude:      -60.660921,
-                radius:         30,
-                transitionType: TransitionType.BOTH,
-                notification: {
-                    id:             1,
-                    title:          "Test test geofencing basic",
-                    text:           "Test.",
-                    openAppOnClick: true
-                }
-            }).then(function () {
-                alert('Geofence successfully added');
-            }, function (reason) {
-                console.log('Adding geofence failed', reason);
-            });
+            
+            
+            setTimeout(function () {
+                window.geofence.addOrUpdate({
+                    id:             "69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb",
+                    latitude:       -32.926748,
+                    longitude:      -60.660921,
+                    radius:         30,
+                    transitionType: TransitionType.BOTH,
+                    notification: {
+                        id:             1,
+                        title:          "Test test geofencing basic",
+                        text:           "Test.",
+                        openAppOnClick: true
+                    }
+                }).then(function () {
+                    alert('Geofence successfully added');
+                }, function (reason) {
+                    console.log('Adding geofence failed', reason);
+                });
+                
+            }, 5000);
         
         }, function (reason) {
             console.log('Initialize geofence failed', reason);
         });
         
-        
-        /**
-        * This callback will be executed every time a geolocation is recorded in the background.
-        */
-        var callbackFn = function(location) {
-            console.log('[js] BackgroundGeolocation callback:  ' + location.latitude + ',' + location.longitude);
-    
-            // Do your HTTP request here to POST location to your server.
-            // jQuery.post(url, JSON.stringify(location));
-    
-            /*
-            IMPORTANT:  You must execute the finish method here to inform the native plugin that you're finished,
-            and the background-task may be completed.  You must do this regardless if your HTTP request is successful or not.
-            IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.
-            */
-            backgroundGeolocation.finish();
-        };
-    
-        var failureFn = function(error) {
-            console.log('BackgroundGeolocation error');
-        };
-    
-        // BackgroundGeolocation is highly configurable. See platform specific configuration options
-        backgroundGeolocation.configure(callbackFn, failureFn, {
-            desiredAccuracy: 5,
-            stationaryRadius: 10,
-            distanceFilter: 10,
-            url: "http://shetaxi.com.ar/test.php",
-            interval: 1000,
-            stopOnStillActivity: true
-
-        });
-    
-        // Turn ON the background-geolocation system.  The user will be tracked whenever they suspend the app.
-        backgroundGeolocation.start();
-        console.log("background geo on");
-        
-        // If you wish to turn OFF background-tracking, call the #stop method.
-        // backgroundGeolocation.stop();
+       
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
