@@ -48,8 +48,8 @@
         
         function initMap() {
           var map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 6
+            center: {lat: -32.926748, lng: -60.660921},
+            zoom: 12
           });
           var marker = new google.maps.Marker({map: map});
           var pos = {
@@ -76,7 +76,7 @@
         		}, function() {
         		  handleLocationError(true, infoWindow, map.getCenter());
         		});
-        	}, 2000);
+        	}, 4000);
         	
           } else {
             // Browser doesn't support Geolocation
