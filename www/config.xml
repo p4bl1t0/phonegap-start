@@ -73,7 +73,7 @@
     <preference name="deployment-target" value="8.0" />
     <plugin spec="https://github.com/p4bl1t0/cordova-plugin-geofence.git" source="git" />
     <!--<plugin name="cordova-plugin-geofence"/>-->
-    <plugin name="cordova-plugin-mauron85-background-geolocation"/>
+    <!--<plugin name="cordova-plugin-mauron85-background-geolocation"/>-->
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
