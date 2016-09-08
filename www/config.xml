@@ -66,10 +66,11 @@
     <!-- 
     <gap:plugin name="nl.x-services.plugins.socialsharing" /> -->
     
-    <!--<gap:plugin name="it.mobimentum.phonegapspinnerplugin" />
+    <!--
     <plugin spec="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" source="git" />
     <gap:plugin name="com.phonegap.plugins.pushplugin"  />
     -->
+    <gap:plugin name="it.mobimentum.phonegapspinnerplugin" />
     <gap:plugin name="nl.x-services.plugins.toast" />
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
     <gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" version="0.8.2" /> <!-- Fixed Local notification problem with Cordova 4.0 -->
