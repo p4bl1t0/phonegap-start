@@ -77,6 +77,8 @@
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
     <gap:plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" version="0.8.2" /> <!-- Fixed Local notification problem with Cordova 4.0 -->
     <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
+      <false/>
+    </gap:config-file>
     
 
     <!-- Third party plugins -->
