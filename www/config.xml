@@ -65,7 +65,8 @@
     <plugin name="cordova-plugin-vibration" />
     
     <!--<gap:plugin name="it.mobimentum.phonegapspinnerplugin" />-->
-    <gap:plugin name="nl.x-services.plugins.socialsharing" />
+    <!--<gap:plugin name="nl.x-services.plugins.socialsharing" />-->
+    <plugin spec="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git" source="git" />
     <gap:plugin name="nl.x-services.plugins.toast" />
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
     <gap:plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" />
